@@ -1,0 +1,18 @@
+zip the project and backup database
+
+.htaccess
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # To protect .env file in server e.g. cpanel
+    <Files .env>
+        Order deny,allow
+        Deny from all
+    </Files>
+
+    # target the public folder
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+change the following in .env
+APP_URL=http://remlex.com/ or any subdomain APP_URL=http://remlex.com/webapp
